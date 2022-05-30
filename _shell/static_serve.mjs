@@ -5,22 +5,15 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 import koaConnect from 'koa2-connect';
 import fs from 'fs';
 
-import { Proxy } from '../viteOpt.mjs';
+import { Proxy, Port } from '../viteOpt.mjs';
 
-const __dirname = path.resolve();
+const AppPath = path.resolve();
+const staticPath = path.join(AppPath, 'dist');
 
-const app = new Koa();
-
-// 静态资源目录
-const staticPath = './dist';
-// 端口
-const port = 9999;
-
-// 代理配置
-const proxyTable = Proxy;
+const App = new Koa();
 
 // 处理404, 兼容 BrowserRouter
-app.use(async (ctx, next) => {
+App.use(async (ctx, next) => {
   try {
     await next();
     const status = ctx.status || 404;
@@ -34,10 +27,10 @@ app.use(async (ctx, next) => {
     }
   }
   function return404content() {
-    ctx.body = fs.readFileSync(path.join(__dirname, `${staticPath}/index.html`), 'utf-8');
+    ctx.body = fs.readFileSync(path.join(staticPath, '/index.html'), 'utf-8');
   }
 });
-app.use(staticServe(path.join(__dirname, staticPath)));
+App.use(staticServe(staticPath));
 
 // 代理服务启动
 const proxy = (context, opt) => {
@@ -53,12 +46,12 @@ const proxy = (context, opt) => {
 };
 
 // 遍历代理接口
-Object.keys(proxyTable).map((context) => {
-  const options = proxyTable[context];
-  app.use(proxy(context, options));
+Object.keys(Proxy).map((context) => {
+  const options = Proxy[context];
+  App.use(proxy(context, options));
   return true;
 });
 
-app.listen(port, '0.0.0.0', () => {
-  console.info(`http://localhost:${port}`);
+App.listen(Port, '0.0.0.0', () => {
+  console.info(`http://localhost:${Port}`);
 });
