@@ -1,13 +1,14 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-if (window.ViteConst) {
+declare const ViteConst: any;
+
+if (ViteConst) {
   window.ViteConst = {
-    ...window.ViteConst,
+    ...ViteConst,
     rmAgin: 'mo777',
   };
 }
-console.log('define', ViteConst);
 
 import { registerSW } from 'virtual:pwa-register';
 
