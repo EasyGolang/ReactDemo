@@ -7,6 +7,7 @@ if (window.ViteConst) {
     rmAgin: 'mo777',
   };
 }
+console.log('define', ViteConst);
 
 import { registerSW } from 'virtual:pwa-register';
 
