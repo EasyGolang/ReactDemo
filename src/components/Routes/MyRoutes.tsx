@@ -52,6 +52,7 @@ function MyRoutes() {
   return (
     <Routes>
       <Route index element={<Home />} />
+      <Route path="/demo" element={<Demo />} />
       <Route path="/personal" element={<Personal />} />
       <Route path="/login" element={<Login type="Login" />} />
       <Route path="/edit_password" element={<EditPassword />} />

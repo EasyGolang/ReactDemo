@@ -1,6 +1,6 @@
 import { message } from 'antd';
 import { resType, resDataType } from './utils.d';
-import { setToken, removeToken } from './utils';
+import { setToken } from './utils';
 
 import { outLogin } from '@/api/login';
 

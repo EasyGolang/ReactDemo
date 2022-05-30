@@ -1,10 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
 import './index.less';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="NotFundApp">
       <h1 className="PageTitle">404</h1>
