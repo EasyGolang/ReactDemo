@@ -3,7 +3,6 @@ import path from 'path';
 import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
 import { PwaConfig, Proxy, Port, ProxyUrl } from './viteOpt.mjs';
-import fs from 'fs';
 
 import AppPackage from './package.json';
 
