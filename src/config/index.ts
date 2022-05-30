@@ -12,8 +12,8 @@ export const Sha256 = (message: string, secretKey: string): string => {
 };
 
 // Key
-export const SecretKey = MD5('golang is good');
+export const SecretKey = MD5('react is good');
 
 export const Encrypt = (msg: string): string => {
-  return Sha256(`${msg}mo7`, SecretKey);
+  return Sha256(`${msg}key`, SecretKey);
 };
