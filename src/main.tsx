@@ -1,13 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 
-import { version } from '../package.json';
-import { ProxyUrl } from '../viteOpt.mjs';
-
-if (version) {
+if (window.ViteConst) {
   window.ViteConst = {
-    version,
-    ProxyUrl,
+    ...window.ViteConst,
     rmAgin: 'mo777',
   };
 }

@@ -2,15 +2,24 @@ import { defineConfig } from 'vite';
 import path from 'path';
 import { VitePWA } from 'vite-plugin-pwa';
 import react from '@vitejs/plugin-react';
-import { PwaConfig, Proxy, Port } from './viteOpt.mjs';
+import { PwaConfig, Proxy, Port, ProxyUrl } from './viteOpt.mjs';
 import fs from 'fs';
+
+import AppPackage from './package.json';
 
 // https://vitejs.dev/config/
 
-const packageJsonStr = fs.readFileSync('./package.json', 'utf8');
-const PackAgeJson = JSON.parse(packageJsonStr);
-
 export default defineConfig({
+  define: {
+    ViteConst: JSON.stringify({
+      AppVersion: AppPackage.version,
+      AppName: AppPackage.name,
+      ProxyUrl,
+    }),
+  },
+
+  root: './',
+  base: './',
   plugins: [react(), VitePWA(PwaConfig)],
   resolve: {
     alias: [
@@ -24,6 +33,7 @@ export default defineConfig({
     outDir: './dist',
     sourcemap: true,
   },
+
   css: {
     preprocessorOptions: {
       less: {

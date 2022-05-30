@@ -8,7 +8,8 @@ declare global {
   interface Window {
     deferredPrompt: any;
     ViteConst: {
-      version: string;
+      AppVersion: string;
+      AppName: string;
       ProxyUrl: string;
       rmAgin: string;
     };

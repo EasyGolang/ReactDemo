@@ -34,7 +34,7 @@ function TopBar() {
 
   let isVersionLast = false;
   if (PingData.ClientVersion) {
-    if (PingData.ClientVersion !== window.ViteConst.version) {
+    if (PingData.ClientVersion !== window.ViteConst.AppVersion) {
       isVersionLast = true;
     }
   }
@@ -157,7 +157,7 @@ function TopBar() {
                   navigate('/about/release_notes');
                 }}
               >
-                <span>当前版本: {window.ViteConst.version}</span>
+                <span>当前版本: {window.ViteConst.AppVersion}</span>
                 {isVersionLast && <span>最新版本: {PingData.ClientVersion}</span>}
               </div>
             </div>

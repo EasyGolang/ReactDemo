@@ -24,6 +24,7 @@ module.exports = {
     // 你的全局变量（设置为 false 表示它不允许被重新赋值）
     //
     window: false,
+    ViteConst: false,
   },
   rules: {
     // 检查 Hook 的规则
