@@ -18,7 +18,6 @@ export default defineConfig({
   },
 
   root: './',
-  base: './',
   plugins: [react(), VitePWA(PwaConfig)],
   resolve: {
     alias: [
