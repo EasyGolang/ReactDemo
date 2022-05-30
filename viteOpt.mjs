@@ -41,7 +41,7 @@ export const PwaConfig = {
 };
 
 // export const ProxyUrl = 'http://localhost:8999';
-export const ProxyUrl = 'https://hunt.mo7.cc';
+export const ProxyUrl = 'https://bz.mo7.cc';
 
 export const Port = 9999;
 
