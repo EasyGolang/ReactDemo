@@ -58,7 +58,6 @@ const service = axios.create();
 //   }
 //   return service(config);
 // };
-import {} from '@/utils/utils.d';
 
 // json格式的请求
 const ajax_json = (param: axiosParam): Promise<resDataType> => {

@@ -7,7 +7,7 @@ export const PwaConfig = {
   manifest: {
     name: 'Hunter',
     short_name: 'Hunter',
-    theme_color: '#F0B90B',
+    theme_color: '#f0b90b',
     description: 'Hunter, 像猎手一样去做交易',
     lang: 'zh',
     icons: [

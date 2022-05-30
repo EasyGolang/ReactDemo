@@ -1,5 +1,4 @@
 import dayjs from 'dayjs';
-import { OkxKey, HunterServer } from '@/api/hunter';
 
 export const amountFormat = (val: string): string => {
   interface paramType {
